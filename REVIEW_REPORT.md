@@ -21,7 +21,41 @@ and optional extra projects remain as supplied.
 All 93 regular drills were filled and executed. All 21 warm-up files were
 repaired. Each lab notebook selects `Python 3.12 (CST1510 .venv)` and contains a
 visible AI-assistance notice. Actual automated outputs and test-fixture metadata
-are saved; a source hash detects outputs that have become stale after edits.
+are saved; a hash of executable code detects outputs that have become stale after
+code edits while allowing the student to add photographs to Markdown cells.
+
+### Student-supplied note photographs added
+
+The user later supplied eight original JPEG photographs from `D:\ct1510 img` on
+the `WINDOWS 11` USB drive. They were inspected and matched to their visible week
+labels and source filenames:
+
+| Notebook | Original photograph(s) |
+|---|---|
+| Week 1 | `week1.jpeg` |
+| Week 2 | `week2.jpeg` |
+| Week 3 | `week3.jpeg`, `week3continued.jpeg` |
+| Week 4 | `week4.jpeg` |
+| Week 5 | `week5.jpeg` |
+| Week 6 | `week6.jpeg` |
+| Week 7 | `week7.jpeg` |
+
+Each original is copied into its week's `LAB/note_photos/` folder and embedded as
+an `image/jpeg` attachment in the existing Journal/photo Markdown cell. The
+notebooks are self-contained: viewing the photographs needs neither the USB drive
+nor an external image path. All eight embedded payloads and archived copies match
+the USB originals exactly. No cropping, enhancement, rewriting or reconstruction
+was applied. The USB files and their modification times were preserved.
+`NOTE_PHOTOS.json` records the mappings, dimensions, sizes and SHA-256 checksums.
+Notebook code cells, execution outputs and execution times were preserved during
+photo insertion. A pre-insertion backup is in `.review/before-note-photos/`.
+
+Both pages of the user-supplied `CW1-spec.pdf` were read locally. The specification
+requires a weekly Cheat Sheet photo showing that week's new box, with Boxes 1-7
+visible by Week 7; other journal material stays on paper. The supplied photographs
+are weekly notebook pages and do not visibly demonstrate the cumulative numbered
+Cheat Sheet format. Their inclusion is not a claim that this separate assessment
+requirement is satisfied. The PDF contains no AI-use policy.
 
 New synthetic input files are `Week 04 .../LAB/servers.txt` (five records) and
 `Week 06 .../LAB/servers.csv` (six records). Week 7 contains six deliberately
@@ -61,8 +95,12 @@ of Git. Instructor material remains excluded under the original ignore rules.
   objects, pandas filtering, generated CSV/PNG files, messy and invalid text,
   all 93 regular drill cells, saved-output source hashes and Python compilation.
 - All notebook instruction and Journal/photo cells were compared with the
-  preserved starting commit. Their text and attachments match, apart from the
-  explicitly added first-cell disclosure.
+  preserved starting commit. Original instructions are preserved, apart from
+  the added first-cell disclosure and replacement of each Journal image
+  placeholder with links to the student's original photo attachments.
+- The photo integrity check compares all eight embedded payloads with archived
+  copies, recorded checksums and USB originals, and validates all seven notebook
+  schemas. Photograph insertion preserved every code cell and saved output.
 - Static inspection read 163 instruction, source, notebook and data files,
   including 35 notebooks, and checked notebook schemas and Python syntax. This
   does not claim that intentionally broken teaching examples all run successfully.
@@ -101,14 +139,16 @@ long-term storage; the preserved Git commit provides the lab baseline.
    own inputs. Add your own name where prompted. Make your own predictions
    before running exercises that request them. Observe and record the specified
    errors yourself; automated checks do not replace those learning activities.
-2. Complete all handwritten notes, reflections and Cheat Sheet boxes yourself.
-   Take your own photographs and insert them into the existing Journal/photo
-   cells. Complete any requested peer demonstration yourself.
-3. Read the actual CW1 brief and university/module AI-use rules, and make the
-   required AI declaration before using any draft for assessment. The user
-   stated that AI assistance was unrestricted, but the policy and brief were
-   not supplied or independently verified. See `AI_ASSISTANCE.md` for the scope
-   and provenance record.
+2. Review the supplied note photographs for legibility and the required
+   cumulative Cheat Sheet format. The eight supplied photos are inserted, but
+   numbered Boxes 1-7 on the cumulative sheet are not verified. Complete any
+   remaining handwritten notes, reflections, Cheat Sheet boxes and requested
+   peer demonstrations yourself. Supply replacement or additional photographs
+   yourself if needed; no learning evidence will be generated for you.
+3. Check the university/module AI-use rules and make any required declaration
+   before assessment. The CW1 brief has now been read, but it contains no AI-use
+   policy. The user stated that AI assistance was unrestricted; that policy
+   remains independently unverified. See `AI_ASSISTANCE.md` for provenance.
 4. In VS Code, select **Python 3.12 (CST1510 .venv)** in a notebook's kernel menu.
    If the new extension has not appeared yet, reload the VS Code window. The
    kernel was tested programmatically; the visible editor interaction was not
@@ -124,6 +164,7 @@ learning dates were fabricated. Nothing was submitted.
 .venv/Scripts/python.exe tools/execute_labs.py
 .venv/Scripts/python.exe -m pytest -q
 .venv/Scripts/python.exe tools/audit_coursework.py
+.venv/Scripts/python.exe tools/check_note_photos.py
 ```
 
 The notebook runner saves executed copies under `.review/` by default. Add

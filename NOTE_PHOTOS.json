@@ -1,0 +1,104 @@
+{
+  "source": "User-supplied photographs from the WINDOWS 11 USB drive, ct1510 img folder",
+  "imported_utc": "2026-11-10T01:11:51.792779+00:00",
+  "image_processing": "None; original JPEG bytes copied and embedded unchanged",
+  "assessment_format": "Weekly notebook pages; cumulative numbered Cheat Sheet boxes are not verified",
+  "photos": [
+    {
+      "week": 1,
+      "original_filename": "week1.jpeg",
+      "notebook": "Week 01 - Values, Types and Input-Output/LAB/W01_Lab.ipynb",
+      "journal_cell_id": "69437301",
+      "file": "Week 01 - Values, Types and Input-Output/LAB/note_photos/week1.jpeg",
+      "attachment": "week1.jpeg",
+      "sha256": "d09cea201165cf19b7dc8e59f3b048809c26d5453659e2f6b2e2818ebb33a0f5",
+      "size_bytes": 75371,
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "week": 2,
+      "original_filename": "week2.jpeg",
+      "notebook": "Week 02 - Decisions and Loops/LAB/W02_Lab.ipynb",
+      "journal_cell_id": "fe566c27",
+      "file": "Week 02 - Decisions and Loops/LAB/note_photos/week2.jpeg",
+      "attachment": "week2.jpeg",
+      "sha256": "3cc7727560df9b6f9c955b2a667499ab7e6130051bd7c184d3346ef23bc9a963",
+      "size_bytes": 85164,
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "week": 3,
+      "original_filename": "week3.jpeg",
+      "notebook": "Week 03 - Functions and Modules/LAB/W03_Lab.ipynb",
+      "journal_cell_id": "806335d6",
+      "file": "Week 03 - Functions and Modules/LAB/note_photos/week3.jpeg",
+      "attachment": "week3.jpeg",
+      "sha256": "4d5b0d84ba5f789b00ac073c72adcdc3c8366c04d81fec3020ff85a6c23aac71",
+      "size_bytes": 86663,
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "week": 3,
+      "original_filename": "week3continued.jpeg",
+      "notebook": "Week 03 - Functions and Modules/LAB/W03_Lab.ipynb",
+      "journal_cell_id": "806335d6",
+      "file": "Week 03 - Functions and Modules/LAB/note_photos/week3continued.jpeg",
+      "attachment": "week3continued.jpeg",
+      "sha256": "f373eff8732743cd72da63d9634fcfe61b31aa7b6e7627b6051cffd7de17046e",
+      "size_bytes": 73407,
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "week": 4,
+      "original_filename": "week4.jpeg",
+      "notebook": "Week 04 - Lists, Dictionaries and Files/LAB/W04_Lab.ipynb",
+      "journal_cell_id": "ed1bb1c3",
+      "file": "Week 04 - Lists, Dictionaries and Files/LAB/note_photos/week4.jpeg",
+      "attachment": "week4.jpeg",
+      "sha256": "d5c73b76d5fd41a830ecf5a62098b98c63ed42bdaedc090e4486e9038ed27abe",
+      "size_bytes": 118671,
+      "width": 1200,
+      "height": 1600
+    },
+    {
+      "week": 5,
+      "original_filename": "week5.jpeg",
+      "notebook": "Week 05 - Classes and Objects/LAB/W05_Lab.ipynb",
+      "journal_cell_id": "39ed1ba6",
+      "file": "Week 05 - Classes and Objects/LAB/note_photos/week5.jpeg",
+      "attachment": "week5.jpeg",
+      "sha256": "80e4e794def25de7c513c2738402e182c799e6b12a7cce66150bb526367b78d4",
+      "size_bytes": 92616,
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "week": 6,
+      "original_filename": "week6.jpeg",
+      "notebook": "Week 06 - Pandas/LAB/W06_Lab.ipynb",
+      "journal_cell_id": "50bb8a9a",
+      "file": "Week 06 - Pandas/LAB/note_photos/week6.jpeg",
+      "attachment": "week6.jpeg",
+      "sha256": "51047ed2817f56053901ce6d78084dcd650e7a592484b9b0f183d6e59f97ed57",
+      "size_bytes": 92165,
+      "width": 1600,
+      "height": 1200
+    },
+    {
+      "week": 7,
+      "original_filename": "week7.jpeg",
+      "notebook": "Week 07 - Strings and Text Manipulation/LAB/W07_Lab.ipynb",
+      "journal_cell_id": "78edf133",
+      "file": "Week 07 - Strings and Text Manipulation/LAB/note_photos/week7.jpeg",
+      "attachment": "week7.jpeg",
+      "sha256": "4322b0b542f61416632a5e7e0e97857b5167cdc213cde700b70fdcf1e6135eeb",
+      "size_bytes": 97386,
+      "width": 1200,
+      "height": 1600
+    }
+  ]
+}

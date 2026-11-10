@@ -1,6 +1,7 @@
 """Automated software checks; these do not attest to independent student work."""
 
 import ast
+import base64
 import hashlib
 import json
 import subprocess
@@ -273,13 +274,14 @@ def test_regular_drills_are_filled_and_executed(week, count):
     assert found == set(range(1, count + 1))
     assert book.metadata.kernelspec.name == "cst1510-py312"
     assert book.metadata.cst1510_review.not_independent_student_evidence
-    digest = hashlib.sha256(json.dumps([cell.source for cell in book.cells],
+    assert book.metadata.cst1510_review.hash_scope == "code_cells"
+    digest = hashlib.sha256(json.dumps([cell.source for cell in book.cells if cell.cell_type == "code"],
                             ensure_ascii=False).encode("utf-8")).hexdigest()
     assert book.metadata.cst1510_review.source_sha256 == digest, "Rerun the notebook after code changes"
 
 
 @pytest.mark.parametrize("week", range(1, 8))
-def test_instruction_and_journal_cells_are_preserved(week):
+def test_instructions_are_preserved_and_only_supplied_photos_are_added(week):
     path = lab(week) / f"W{week:02d}_Lab.ipynb"
     relative = path.relative_to(ROOT).as_posix()
     original = subprocess.run(["git", "show", f"d0ccc19:{relative}"], cwd=ROOT,
@@ -289,14 +291,29 @@ def test_instruction_and_journal_cells_are_preserved(week):
         warnings.simplefilter("ignore", nbformat.warnings.MissingIDFieldWarning)
         before = nbformat.reads(original, as_version=4)
     after = nbformat.read(path, as_version=4)
+    manifest = json.loads((ROOT / "NOTE_PHOTOS.json").read_text(encoding="utf-8"))
+    photos = [photo for photo in manifest["photos"] if photo["week"] == week]
+    assert len(photos) == (2 if week == 3 else 1)
     assert len(before.cells) == len(after.cells)
     for index, (old, new) in enumerate(zip(before.cells, after.cells)):
         if old.cell_type == "markdown":
             if index == 0:
                 assert new.source.startswith(old.source)
+            elif "*(paste here)*" in old.source:
+                links = [f"![User-provided handwritten notes - Week {week}, photo {number}]"
+                         f"(attachment:{photo['attachment']})"
+                         for number, photo in enumerate(photos, start=1)]
+                replacement = "\n\n".join(links) + "\n\n*Original photographs supplied by the student; kept unchanged.*"
+                assert new.source == old.source.replace("*(paste here)*", replacement)
+                assert set(new.attachments) == {photo["attachment"] for photo in photos}
+                for photo in photos:
+                    content = base64.b64decode(new.attachments[photo["attachment"]]["image/jpeg"], validate=True)
+                    assert hashlib.sha256(content).hexdigest() == photo["sha256"]
+                    assert content == (ROOT / photo["file"]).read_bytes()
             else:
                 assert new.source == old.source
-            assert new.get("attachments", {}) == old.get("attachments", {})
+            if "*(paste here)*" not in old.source:
+                assert new.get("attachments", {}) == old.get("attachments", {})
 
 
 @pytest.mark.parametrize("week", range(1, 8))

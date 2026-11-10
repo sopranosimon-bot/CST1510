@@ -78,8 +78,9 @@ print("[AUTOMATED TEST] All supplied inputs consumed")'''
         "ai_assisted": True, "execution": "automated synthetic fixtures",
         "inputs": INPUTS[week], "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "kernel": KERNEL, "not_independent_student_evidence": True,
+        "hash_scope": "code_cells",
         "source_sha256": hashlib.sha256(json.dumps(
-            [cell.source for cell in book.cells], ensure_ascii=False
+            [cell.source for cell in book.cells if cell.cell_type == "code"], ensure_ascii=False
         ).encode("utf-8")).hexdigest(),
     }
     nbformat.validate(book)
