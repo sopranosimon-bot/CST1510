@@ -116,11 +116,21 @@ are deliberate teaching behaviours, not hidden test failures.
 
 ## Preservation and Git
 
-`main` remains at `7a016b714e99c84bcfb29555d2711920ab2f7a99`. Work is on
+During preparation, `main` was preserved at
+`7a016b714e99c84bcfb29555d2711920ab2f7a99` while work was committed and pushed on
 `review/cst1510-typical`. Commit `d0ccc19` preserves the original lab files before
 the AI-assisted changes. Later commits group the tested environment, Weeks 1-7
-in order, and this report. Only that review branch is intended for the push;
-there is no merge or coursework submission.
+in order, the original note photographs and this report. On 10 November 2026 the
+user explicitly approved merging the tested review branch into `main`, making the
+reviewed portfolio available from the repository's default view. This approval
+does not authorise a Moodle submission, and none has been performed.
+
+The user supplied a screenshot of the actual Moodle/Turnitin instructions: upload
+a text file containing the student's full name, student number and publicly
+accessible GitHub repository link. The user supplied their identity for that file.
+The completed file is `.review/CW1-submission.txt`, kept outside version control
+so the student number is not published in the repository. The repository has been
+verified as public. The screenshot shows a deadline of 10 November 2026 at 23:55.
 
 A separate pre-edit backup of all 197 existing files is at
 `C:\Users\lildr\AppData\Local\Temp\CST1510-before-review-20261110-000547`.

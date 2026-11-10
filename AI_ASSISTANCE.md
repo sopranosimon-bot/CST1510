@@ -34,6 +34,10 @@ labelled synthetic inputs. Sample names, hostnames and records are test fixtures
 not personal information or records of student activity. The execution runner
 and test inputs are in `tools/execute_labs.py`; additional checks are in `tests/`.
 
-Work stays on `review/cst1510-typical`. No merge to main or coursework submission
-is authorised. Git timestamps describe this review work, not attendance or the
-dates when the student completed each week's learning.
+Work was prepared and reviewed on `review/cst1510-typical`. On 10 November 2026,
+the user explicitly approved merging the reviewed work into `main` so the public
+repository's default view shows the portfolio. Moodle submission remains for the
+student; no coursework has been submitted through Moodle by Codex. Git timestamps
+describe this review work, not attendance or the dates when the student completed
+each week's learning. The submission text file containing the student's identity
+is kept locally under the ignored `.review/` folder and is not committed to GitHub.
