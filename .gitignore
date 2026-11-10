@@ -9,3 +9,8 @@ __pycache__/
 __MACOSX/
 .DS_Store
 .env
+
+# Local automated review artifacts and editor crash logs
+.review/
+debug.log
+.pytest_cache/
