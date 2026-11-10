@@ -1,4 +1,4 @@
-# BROKEN ON PURPOSE.
+# AI-assisted repair of the intentionally broken exercise.
 # Run it, read the last line, then fix it.
 
 class Record:
@@ -11,4 +11,4 @@ class Record:
         return "OVER LIMIT" if self.value > self.limit else "OK"
 
 r = Record("R-001", 120.0, 100.0)
-print(status())
+print(r.status())

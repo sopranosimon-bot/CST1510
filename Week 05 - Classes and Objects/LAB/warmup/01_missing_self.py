@@ -1,8 +1,8 @@
-# BROKEN ON PURPOSE.
+# AI-assisted repair of the intentionally broken exercise.
 # Run it, read the last line, then fix it.
 
 class Record:
-    def status(percent):    # this parameter should be self
+    def status(self, percent):
         return percent
 
 r = Record()
