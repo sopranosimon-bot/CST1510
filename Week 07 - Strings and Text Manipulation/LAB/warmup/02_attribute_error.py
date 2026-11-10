@@ -1,8 +1,7 @@
-# BROKEN ON PURPOSE.
+# AI-assisted repair of the intentionally broken exercise.
 # Run it, read the last line, then fix it.
 
 value_text = "87"
-value = float(value_text)
-
-cleaned = value.strip()
-print(cleaned)
+cleaned = value_text.strip()
+value = float(cleaned)
+print(value)
