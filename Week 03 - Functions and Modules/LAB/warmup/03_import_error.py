@@ -1,6 +1,6 @@
-# BROKEN ON PURPOSE.
+# AI-assisted repair of the intentionally broken exercise.
 # Run it, read the last line, then fix it.
 
-import maths
+import math
 
-print(maths.sqrt(16))
+print(math.sqrt(16))

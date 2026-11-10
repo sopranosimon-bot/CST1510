@@ -1,7 +1,7 @@
-# BROKEN ON PURPOSE.
+# AI-assisted repair of the intentionally broken exercise.
 # Run it, read the last line, then fix it.
 
-def status_of(percent, warning_at):
+def status_of(percent, warning_at=90):
     if percent >= 100:
         return "OVER LIMIT"
     elif percent >= warning_at:
